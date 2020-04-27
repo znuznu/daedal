@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  font-family: arial, helvetica, sans-serif;
+}
+
+h1 {
+  color: #3b3b3b;
+  text-align: center;
+}
+
+ul {
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: right;
+}
+
+li{
+  padding: 5px 5px 5px 5px;
+}
+
+label {
+  font-weight: bold;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 5px;
+}
+
+input {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+td {
+  width: 100%;
+}
+
+select {
+  color: #3b3b3b;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+div#contentSection {
+  width: 400px;
+  margin: 0 auto;
+  border: solid transparent 1px;
+  border-radius: 5px;
+  background-color: #FFA3AB;
+}
+
+div#mazeSection {
+  margin: 0 auto;
+  text-align: center;
+}
+
+div#canvasSection {
+  margin-top: 20px;
+  border: solid transparent 1px;
+  border-radius: 5px;
+}
+
+div#generate {
+  color: #3b3b3b;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+table#settings {
+  color: #3b3b3b;
+  margin: 10px;
+}
+
+canvas#canvasMaze {
+  background-color: white;
+}
