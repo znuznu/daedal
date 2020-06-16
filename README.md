@@ -10,5 +10,4 @@ Generate perfect mazes (_tile-based_) with some rendering options.
 - Hunt-and-kill
 - Binary Tree (North/West bias)
 
-### Example
 ![example](example.png)  

@@ -6,11 +6,7 @@
     <title>Maze generator - tile based</title>
   </head>
   <body>
-    <script type="module" src="js/Maths.js"></script>
-    <script type="module" src="js/Cell.js"></script>
-    <script type="module" src="js/Maze.js"></script>
-    <script type="module" src="js/MazeBinaryTree.js"></script>
-    <script type="module" src="js/Daedal.js"></script>
+    <script src="js/maze.js"></script>
     <h1>Maze generator - tile based</h1>
     <div id="contentSection">
       <table id="settings">
@@ -27,8 +23,10 @@
             <td><label for="algorithms">Algorithm:</label></td>
             <td>
               <select name="algorithms" id="algorithms">
-                  <option value="binarytree">Binary Tree (North/West Bias)</option>
                   <option value="backtrack">Depth-first search</option>
+                  <option value="prim">Prim</option>
+                  <option value="huntandkill">Hunt-and-Kill</option>
+                  <option value="binarytree">Binary Tree (North/West Bias)</option>
               </select>
             </td>
           </tr>

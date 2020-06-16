@@ -63,7 +63,6 @@ class Maze {
    * @param {number} y - y coordinate of the tile from which to start.
    */
   processBacktrack(x, y) {
-    console.log("backtrack");
     this.fillWithCross();
     let stack = [], marked = new Set([]);
     marked.add(this.grid[x][y]);
@@ -206,9 +205,6 @@ class Maze {
   processBinaryTree(x, y) {
     this.fillWithCross();
 
-    console.log('Grid');
-    console.log(this.grid);
-
     for (let r = 0; r < this.nrow; r += 2)
     for (let c = 0; c < this.ncol; c += 2) {
       const d = [
@@ -289,7 +285,7 @@ class Maze {
     }
 
     this.grid.unshift(this.fillRow(0, 1));
-    this.grid.push(this.fillRow(this.nrow-1, 1));
+    this.grid.push(this.fillRow(this.nrow - 1, 1));
   }
 
   /**
