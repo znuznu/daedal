@@ -1,6 +1,7 @@
 export default class Cell {
   /**
    * Represent a cell of the maze (or a tile).
+   *
    * @constructor
    * @param {number} r - row coordinate of the Cell.
    * @param {number} c - col coordinate of the Cell.

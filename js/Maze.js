@@ -5,6 +5,7 @@ export default class Maze {
    * An "abstract" class representing a maze. Because we're on a
    * tile-based version, we need to add more cells for the walls.
    * The grid is filled later depending on the algorithm.
+   *
    * @constructor
    * @param {number} nrow - number of rows.
    * @param {number} ncol - number of cols.
@@ -54,6 +55,7 @@ export default class Maze {
 
   /**
    * Return a row filled with the given type.
+   *
    * @param {number} rowIndex - Index of the row.
    * @param {number} type - Type of the cells.
    * @returns {Array} - A row of Cell.
@@ -68,17 +70,16 @@ export default class Maze {
   }
 
   /**
-   * Get all existing cells at a distance of `n` cells around (r, c).
+   * Get all existing cells at a distance of `n` cells around Cell.
    * "Around" means vertically and horizontally.
+   *
    * @param {number} r - x coordinate of the tile.
-   * @param {number} c - y coordinate of the tile.
-   * @param {number} n - Distance from the tile.
+   * @param {Cell} cell - The Cell to process.
    * @returns {Array} - Return an array containing objects with the direction and the Cell.
    */
-  validSurroundings(r, c, n) {
+  validSurroundings(cell, n) {
     let validNeighbors = [];
     const directions = ['north', 'south', 'west', 'east'];
-    let cell = this.grid[r][c];
 
     directions.forEach(direction => {
       let cellInDirection = cell.getCellInDirection(direction, n);
@@ -95,6 +96,7 @@ export default class Maze {
 
   /**
    * Carve a passage through the wall.
+   *
    * @param {number} r - row coordinate of the tile.
    * @param {number} c - col coordinate of the tile.
    */
@@ -104,6 +106,7 @@ export default class Maze {
 
   /**
    * Return `true` if (r, c) lies within the limit of the maze.
+   *
    * @param {number} r - row coordinate of the tile.
    * @param {number} c - col coordinate of the tile.
    * @returns {boolean} - If the maze contains such coordinates.

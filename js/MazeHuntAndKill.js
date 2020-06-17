@@ -25,7 +25,7 @@ export default class MazeHuntAndKill extends Maze {
 
     while (processedTiles < totalTiles) {
       marked.add(cell);
-      let neighbors = this.validSurroundings(cell.r, cell.c, 2);
+      let neighbors = this.validSurroundings(cell, 2);
 
       let notMarked = neighbors.filter(
         n => !marked.has(n.cell)
@@ -53,7 +53,7 @@ export default class MazeHuntAndKill extends Maze {
       if (cell.isWall() || marked.has(cell))
         continue;
 
-      let neighbors = this.validSurroundings(r, c, 2);
+      let neighbors = this.validSurroundings(cell, 2);
 
       for (let n of neighbors) {
         if (!marked.has(n.cell))

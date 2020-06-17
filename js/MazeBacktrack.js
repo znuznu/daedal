@@ -9,6 +9,7 @@ export default class MazeBacktrack extends Maze {
   /**
    * Generate the maze based on the Depth-First search algorithm.
    * Use a stack to avoid depth of recursion.
+   *
    * @param {number} r - row coordinate of the tile from which to start.
    * @param {number} c - col coordinate of the tile from which to start.
    */
@@ -23,8 +24,7 @@ export default class MazeBacktrack extends Maze {
       let current = stack.pop();
 
       let neighbors = this.validSurroundings(
-        current.r,
-        current.c,
+        current,
         2
       );
 

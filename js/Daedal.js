@@ -51,6 +51,7 @@ window.writeClipboard = function writeClipboard() {
 
 /**
  * Main displaying function of the maze.
+ *
  * @param {Maze} maze - The maze.
  */
 function show(maze) {
@@ -72,6 +73,7 @@ function show(maze) {
 /**
  * Fill a textarea with the raw version of the maze.
  * Basically, 0 & 1.
+ *
  * @param {number} size - The tile size.
  * @param {Maze} maze - The maze.
  */
@@ -89,6 +91,7 @@ function printRaw(size, maze) {
 
 /**
  * Draw an helpful grid on the canvas.
+ *
  * @param {CanvasRenderingContext2D} ctx - The canvas context.
  * @param {number} size - The tile size.
  * @param {Maze} maze - The maze.
@@ -119,6 +122,7 @@ function drawGrid(ctx, size, maze) {
 
 /**
  * Draw the maze on the canvas.
+ *
  * @param {CanvasRenderingContext2D} ctx - The canvas context.
  * @param {number} size - The tile size.
  * @param {Maze} maze - The maze.
