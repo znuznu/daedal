@@ -16,7 +16,8 @@ export default class Cell {
   }
 
   /**
-   * Return the Cell at n cells in the given direction or undefined if there isn't any.
+   * Get the Cell at n cells in the given direction or undefined if there isn't any.
+   *
    * @param {string} direction - The direction the cell to check is.
    * @param {number} n - The gap between this and the Cell.
    * @returns {Cell} - The Cell if it exists, otherwise undefined.
@@ -46,7 +47,17 @@ export default class Cell {
     return cell;
   }
 
+  /**
+   * Is this Cell a wall ?
+   */
   isWall() {
     return this.type === 1;
+  }
+
+  /**
+   * This Cell becomes a passage.
+   */
+  carve() {
+    this.type = 0;
   }
 }

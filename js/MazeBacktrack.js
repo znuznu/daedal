@@ -23,10 +23,7 @@ export default class MazeBacktrack extends Maze {
     while (stack.length) {
       let current = stack.pop();
 
-      let neighbors = this.validSurroundings(
-        current,
-        2
-      );
+      let neighbors = this.validSurroundings(current, 2);
 
       let notMarked = neighbors.filter(
         n => !marked.has(n.cell)
@@ -38,7 +35,7 @@ export default class MazeBacktrack extends Maze {
         let pick = notMarked[randNum(notMarked.length)];
 
         let wall = current.getCellInDirection(pick.direction, 1);
-        this.carve(wall.r, wall.c);
+        wall.carve();
 
         marked.add(pick.cell);
         stack.push(pick.cell);

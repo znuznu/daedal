@@ -21,7 +21,7 @@ export default class MazePrim extends Maze {
 
     let startCell = this.grid[r][c];
 
-    this.carve(r, c);
+    startCell.carve();
 
     let frontierNeighbors = this.validSurroundings(startCell, 2);
     frontierNeighbors.forEach(n => {
@@ -41,8 +41,8 @@ export default class MazePrim extends Maze {
       let pick = passageNeighbors[rIndex];
       let wall = cell.getCellInDirection(pick.direction, 1);
 
-      this.carve(wall.r, wall.c);
-      this.carve(cell.r, cell.c);
+      wall.carve();
+      cell.carve();
 
       neighbors.forEach(n => {
         n.cell.isWall() && frontier.add(n.cell);

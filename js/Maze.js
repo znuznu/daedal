@@ -95,16 +95,6 @@ export default class Maze {
   }
 
   /**
-   * Carve a passage through the wall.
-   *
-   * @param {number} r - row coordinate of the tile.
-   * @param {number} c - col coordinate of the tile.
-   */
-  carve(r, c) {
-    this.grid[r][c].type = 0;
-  }
-
-  /**
    * Return `true` if (r, c) lies within the limit of the maze.
    *
    * @param {number} r - row coordinate of the tile.

@@ -34,7 +34,7 @@ export default class MazeHuntAndKill extends Maze {
       if (notMarked.length) {
         let pick = notMarked[randNum(notMarked.length)];
         let wall = cell.getCellInDirection(pick.direction, 1);
-        this.carve(wall.r, wall.c);
+        wall.carve();
         cell = pick.cell;
       } else {
         let h = this.hunt(marked);
@@ -60,7 +60,7 @@ export default class MazeHuntAndKill extends Maze {
           continue;
 
         let wall = cell.getCellInDirection(n.direction, 1);
-        this.carve(wall.r, wall.c);
+        wall.carve();
 
         return cell;
       }
