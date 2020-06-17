@@ -44,4 +44,8 @@ export default class Cell {
 
     return cell;
   }
+
+  isWall() {
+    return this.type === 1;
+  }
 }

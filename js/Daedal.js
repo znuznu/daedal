@@ -1,5 +1,6 @@
 import MazeBinaryTree from './MazeBinaryTree.js';
 import MazeBacktrack from './MazeBacktrack.js';
+import MazePrim from './MazePrim.js';
 
 /**
  * Generate the maze according to the user inputs.
@@ -17,6 +18,8 @@ window.generate = function generate() {
       maze.process(0, 0);
       break;
     case 'prim':
+      maze = new MazePrim(width, height);
+      maze.process();
       break;
     case 'huntandkill':
       break;
@@ -25,6 +28,7 @@ window.generate = function generate() {
       maze.process();
       break;
   }
+
   maze.addBorder();
   show(maze);
 }
