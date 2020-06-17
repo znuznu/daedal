@@ -19,22 +19,22 @@ export default class MazeBinaryTree extends Maze {
       const directions = {
         north: {
           wall: {
-            row: r - 1,
-            col: c
+            r: r - 1,
+            c: c
           },
           passage: {
-            row: r - 2,
-            col: c
+            r: r - 2,
+            c: c
           }
         },
         west: {
           wall: {
-            row: r,
-            col: c - 1
+            r: r,
+            c: c - 1
           },
           passage: {
-            row: r,
-            col: c - 2
+            r: r,
+            c: c - 2
           }
         }
       }
@@ -52,8 +52,8 @@ export default class MazeBinaryTree extends Maze {
         }
       }
 
-      if (this.isWithinBounds(next.passage.row, next.passage.col)) {
-        this.carve(next.wall.row, next.wall.col);
+      if (this.isWithinBounds(next.passage.r, next.passage.c)) {
+        this.carve(next.wall.r, next.wall.c);
       }
     }
   }

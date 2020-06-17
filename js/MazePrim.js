@@ -23,9 +23,7 @@ export default class MazePrim extends Maze {
 
     let frontierNeighbors = this.validSurroundings(r, c, 2);
     frontierNeighbors.forEach(n => {
-      if (n.cell.isWall()) {
-        frontier.add(n.cell);
-      }
+      n.cell.isWall() && frontier.add(n.cell);
     })
 
     while (frontier.size) {
@@ -33,23 +31,19 @@ export default class MazePrim extends Maze {
       let cell = frontierCells[randNum(frontierCells.length)];
 
       let neighbors = this.validSurroundings(cell.r, cell.c, 2);
-      let passageNeighbors = neighbors.filter(n => {
-        if (!n.cell.isWall()) {
-          return n;
-        }
-      });
+      let passageNeighbors = neighbors.filter(
+        n => !n.cell.isWall()
+      );
 
       let rIndex = randNum(passageNeighbors.length);
-      let rNeighbor = passageNeighbors[rIndex];
-      let wall = cell.getCellInDirection(rNeighbor.direction, 1);
+      let pick = passageNeighbors[rIndex];
+      let wall = cell.getCellInDirection(pick.direction, 1);
 
       this.carve(wall.r, wall.c);
       this.carve(cell.r, cell.c);
 
       neighbors.forEach(n => {
-        if (n.cell.isWall()) {
-          frontier.add(n.cell);
-        }
+        n.cell.isWall() && frontier.add(n.cell);
       });
 
       frontier.delete(cell);

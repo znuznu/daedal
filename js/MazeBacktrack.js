@@ -28,23 +28,20 @@ export default class MazeBacktrack extends Maze {
         2
       );
 
-      let notMarked = neighbors.filter(n => {
-        if (!marked.has(n.cell)) {
-          return n;
-        }
-      });
+      let notMarked = neighbors.filter(
+        n => !marked.has(n.cell)
+      );
 
       if (notMarked.length) {
         stack.push(current);
 
-        let rCell = notMarked[randNum(notMarked.length)];
-        let rRow = rCell.cell.r, rCol = rCell.cell.c;
+        let pick = notMarked[randNum(notMarked.length)];
 
-        let wall = current.getCellInDirection(rCell.direction, 1);
+        let wall = current.getCellInDirection(pick.direction, 1);
         this.carve(wall.r, wall.c);
-        
-        marked.add(rCell.cell);
-        stack.push(rCell.cell);
+
+        marked.add(pick.cell);
+        stack.push(pick.cell);
       }
     }
   }
