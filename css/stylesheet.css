@@ -127,7 +127,6 @@ div#container {
 }
 
 div#contentSection {
-  width: 50vh;
   min-height: 100%;
   border: solid transparent 1px;
   background-color: #224a66;
