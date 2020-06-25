@@ -34,6 +34,11 @@ button {
   border-color: #d7aab0;
 }
 
+button:hover {
+  background-color: #224a66;
+  color: #d7aab0;
+}
+
 li {
   padding: 5px 5px 5px 5px;
 }
@@ -56,6 +61,40 @@ input {
   border: solid 2px;
   border-radius: 16px;
   border-color: #d7aab0;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=checkbox] {
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    background: #224a66;
+    border: 2px solid #d7aab0;
+    border-radius: 1px;
+    text-align: center;
+}
+
+input[type="checkbox"]:checked {
+  background: #d7aab0;
+}
+
+input[type=color] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=color] {
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+    background: #224a66;
+    border: none;
 }
 
 td {
@@ -132,38 +171,4 @@ canvas#canvasMaze {
 img#icon {
   float: left;
   margin: 0px;
-}
-
-input[type=checkbox] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-}
-
-input[type=checkbox] {
-    height: 16px;
-    width: 16px;
-    padding: 0;
-    background: #224a66;
-    border: 2px solid #d7aab0;
-    border-radius: 1px;
-    text-align: center;
-}
-
-input[type="checkbox"]:checked {
-  background: #d7aab0;
-}
-
-input[type=color] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-}
-
-input[type=color] {
-    height: 25px;
-    width: 25px;
-    padding: 0px;
-    background: #224a66;
-    border: none;
 }
