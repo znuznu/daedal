@@ -11,3 +11,4 @@ Generate perfect mazes (_tile-based_) with some rendering options.
 - Prim (randomized)
 - Hunt-and-kill
 - Binary Tree
+- Growing Tree
