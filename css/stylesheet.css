@@ -1,11 +1,14 @@
 body {
   margin: 0;
-  font-family: arial, helvetica, sans-serif;
+  font-family: Quicksand, arial, helvetica, sans-serif;
+  background-color: #d7aab0;
+  font-size: 1.1em;
 }
 
-h1 {
-  color: #3b3b3b;
+h1, h2 {
+  color: #d7aab0;
   text-align: center;
+  margin: 5px;
 }
 
 ul {
@@ -16,49 +19,81 @@ ul {
   text-align: right;
 }
 
-li{
+button {
+  background-color: #d7aab0;
+  color: #224a66;
+  font-family: Quicksand, arial, helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: solid 2px;
+  border-radius: 16px;
+  border-color: #d7aab0;
+}
+
+li {
   padding: 5px 5px 5px 5px;
 }
 
 label {
   font-weight: bold;
   display: inline-block;
-  box-sizing: border-box;
   padding-right: 5px;
 }
 
 input {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  background-color: #224a66;
+  color: #d7aab0;
+  font-family: Quicksand, arial, helvetica, sans-serif;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: solid 2px;
+  border-radius: 16px;
+  border-color: #d7aab0;
 }
 
 td {
   width: 100%;
+  height: 50px;
 }
 
 select {
-  color: #3b3b3b;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  background-color: #224a66;
+  color: #d7aab0;
+  font-family: Quicksand, arial, helvetica, sans-serif;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
+  border: solid 2px;
+  border-radius: 16px;
+  border-color: #d7aab0;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+div#container {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
 }
 
 div#contentSection {
-  width: 400px;
-  margin: 0 auto;
+  width: 50vh;
+  min-height: 100%;
   border: solid transparent 1px;
-  border-radius: 5px;
-  background-color: #FFA3AB;
+  background-color: #224a66;
 }
 
 div#mazeSection {
-  margin: 0 auto;
-  text-align: center;
+  flex-grow: 1;
+  margin-left: 20px;
 }
 
 div#canvasSection {
@@ -67,17 +102,68 @@ div#canvasSection {
   border-radius: 5px;
 }
 
+div#rawSection {
+  text-align: center;
+}
+
 div#generate {
   color: #3b3b3b;
   text-align: center;
-  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+div#titleSection {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 table#settings {
-  color: #3b3b3b;
+  color: #d7aab0;
   margin: 10px;
 }
 
 canvas#canvasMaze {
   background-color: white;
+}
+
+img#icon {
+  float: left;
+  margin: 0px;
+}
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=checkbox] {
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    background: #224a66;
+    border: 2px solid #d7aab0;
+    border-radius: 1px;
+    text-align: center;
+}
+
+input[type="checkbox"]:checked {
+  background: #d7aab0;
+}
+
+input[type=color] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=color] {
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+    background: #224a66;
+    border: none;
 }

@@ -16,19 +16,19 @@ window.generate = function generate() {
 
   switch(algorithm) {
     case 'backtrack':
-      maze = new MazeBacktrack(width, height);
+      maze = new MazeBacktrack(height, width);
       maze.process(0, 0);
       break;
     case 'prim':
-      maze = new MazePrim(width, height);
+      maze = new MazePrim(height, width);
       maze.process();
       break;
     case 'huntandkill':
-      maze = new MazeHuntAndKill(width, height);
+      maze = new MazeHuntAndKill(height, width);
       maze.process();
       break;
     case 'binarytree':
-      maze = new MazeBinaryTree(width, height);
+      maze = new MazeBinaryTree(height, width);
       maze.process();
       break;
   }

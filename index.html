@@ -6,63 +6,65 @@
     <title>Maze generator - tile based</title>
   </head>
   <body>
-    <script type="module" src="js/Maths.js"></script>
-    <script type="module" src="js/Cell.js"></script>
-    <script type="module" src="js/Maze.js"></script>
-    <script type="module" src="js/MazeBinaryTree.js"></script>
     <script type="module" src="js/Daedal.js"></script>
-    <h1>Maze generator - tile based</h1>
-    <div id="contentSection">
-      <table id="settings">
-        <tbody>
-          <tr>
-            <td><label>Height:</label></td>
-            <td><input id="height" value="5" type="text"/></td>
-          </tr>
-          <tr>
-            <td><label>Width:</label></td>
-            <td><input id="width" value="10" type="text"/></td>
-          </tr>
-          <tr>
-            <td><label for="algorithms">Algorithm:</label></td>
-            <td>
-              <select name="algorithms" id="algorithms">
-                  <option value="binarytree">Binary Tree (North/West Bias)</option>
-                  <option value="backtrack">Depth-first search</option>
-                  <option value="prim">Prim</option>
-                  <option value="huntandkill">Hunt And Kill</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td><label>Color:</label></td>
-            <td>
-              <input type="color" id="color" value="#FFA3AB">
-            </td>
-          </tr>
-          <tr>
-            <td><label for="grid">Grid:</label></td>
-            <td>
-              <input type="checkbox" id="grid" checked>
-            </td>
-          </tr>
-          <tr>
-            <td><label>Tile size:</label></td>
-            <td><input id="size" value="20" type="text"/></td>
-          </tr>
-        </tbody>
-    </table>
-    <div id="generate">
-      <input type="button" value="Generate" onclick="generate()"/>
+    <div id="container">
+      <div id="contentSection">
+        <div id="titleSection">
+          <img id="icon" src="/resources/icon.png" alt="Logo icon">
+          <h1>Maze generator</h1>
+          <h2>Tile based</h2>
+        </div>
+        <table id="settings">
+          <tbody>
+            <tr>
+              <td><label>Height</label></td>
+              <td><input id="height" value="5" type="text"/></td>
+            </tr>
+            <tr>
+              <td><label>Width</label></td>
+              <td><input id="width" value="10" type="text"/></td>
+            </tr>
+            <tr>
+              <td><label for="algorithms">Algorithm</label></td>
+              <td>
+                <select name="algorithms" id="algorithms">
+                    <option value="backtrack">Depth-first search</option>
+                    <option value="prim">Prim</option>
+                    <option value="huntandkill">Hunt And Kill</option>
+                    <option value="binarytree">Binary Tree (N/W)</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><label>Color</label></td>
+              <td>
+                <input type="color" id="color" value="#224a66">
+              </td>
+            </tr>
+            <tr>
+              <td><label for="grid">Grid</label></td>
+              <td>
+                <input type="checkbox" id="grid">
+              </td>
+            </tr>
+            <tr>
+              <td><label>Tile size</label></td>
+              <td><input id="size" value="20" type="text"/></td>
+            </tr>
+          </tbody>
+      </table>
+      <div id="generate">
+        <button onclick="generate()"/>Generate</button>
+      </div>
+      <div id="rawSection" hidden>
+        <textarea id="textRaw" readonly hidden></textarea></br>
+        <button onclick="writeClipboard()">Raw version to clipboard</button></br>
+      </div>
     </div>
-  </div>
-  <div id="mazeSection" hidden>
-    <div id="rawSection">
-      <textarea id="textRaw" readonly hidden></textarea></br>
-      <input type ="button" value="Raw version to clipboard" onclick="writeClipboard()"/></br>
-    </div>
-    <div id="canvasSection">
-      <canvas id="canvasMaze"></canvas>
+    <div id="mazeSection" hidden>
+      <div id="canvasSection">
+        <canvas id="canvasMaze"></canvas>
+      </div>
     </div>
   </div>
   </body>

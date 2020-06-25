@@ -5,10 +5,10 @@
  */
 export function show(maze) {
   let canvas = document.getElementById('canvasMaze');
-  let divCanvas = document.getElementById('mazeSection');
   let grid = document.getElementById('grid').checked;
   const size = Number(document.getElementById('size').value);
   mazeSection.hidden = false;
+  rawSection.hidden = false;
 
   let ctx = canvas.getContext('2d');
   ctx.canvas.height = maze.nrow * size;
@@ -81,6 +81,7 @@ function drawGrid(ctx, size, maze) {
 function drawMaze(ctx, size, maze) {
   let color = document.getElementById('color').value;
   let x = 0, y = 0;
+
   ctx.fillStyle = color;
 
   for (let r of maze.grid) {
