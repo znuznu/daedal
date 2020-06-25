@@ -27,9 +27,21 @@ window.generate = function generate() {
       maze = new MazeHuntAndKill(height, width);
       maze.process();
       break;
-    case 'binarytree':
+    case 'btnw':
       maze = new MazeBinaryTree(height, width);
-      maze.process();
+      maze.process('north', 'west');
+      break;
+    case 'btne':
+      maze = new MazeBinaryTree(height, width);
+      maze.process('north', 'east');
+      break;
+    case 'btsw':
+      maze = new MazeBinaryTree(height, width);
+      maze.process('south', 'west');
+      break;
+    case 'btse':
+      maze = new MazeBinaryTree(height, width);
+      maze.process('south', 'east');
       break;
   }
 

@@ -8,28 +8,38 @@ export default class MazeBinaryTree extends Maze {
 
   /**
    * Generate the maze based on the Binary Tree algorithm.
-   * I'm using North/West bias but any others bias can could be
-   * easily implemented following the same generic idea.
+   * Two directions representing the bias are required.
+   *
+   * @param {string} vDirection - The vertical direction.
+   * @param {string} hDirection - The horizontal direction.
    */
-  process() {
+  process(vDirection, hDirection) {
     this.fillWithCross();
 
     for (let r = 0; r < this.nrow; r += 2)
     for (let c = 0; c < this.ncol; c += 2) {
+      const constraints = {
+        'north': r === 0,
+        'south': r === this.nrow - 1,
+        'west': c === 0,
+        'east': c === this.ncol - 1,
+      };
+
       let direction = undefined;
 
-      if (r === 0 && c === 0)
+      if (constraints[vDirection] && constraints[hDirection]) {
         continue;
+      }
 
-      if (r === 0 && c) {
-        direction = 'west';
-      } else if (c === 0 && r) {
-        direction = 'north';
+      if (constraints[vDirection] && !constraints[hDirection]) {
+        direction = hDirection;
+      } else if (!constraints[vDirection] && constraints[hDirection]) {
+        direction = vDirection;
       } else {
-        direction = 'north';
+        direction = vDirection;
 
         if (!randNum(2))
-          direction = 'west';
+          direction = hDirection;
       }
 
       this.grid[r][c].getCellInDirection(direction, 1).carve();

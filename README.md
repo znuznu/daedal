@@ -8,6 +8,6 @@ Generate perfect mazes (_tile-based_) with some rendering options.
 - Depth-first search
 - Prim (randomized)
 - Hunt-and-kill
-- Binary Tree (North/West bias)
+- Binary Tree
 
 ![example](example.png)  
