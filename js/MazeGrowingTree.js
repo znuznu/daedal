@@ -58,8 +58,8 @@ export default class MazeGrowingTree extends Maze {
 
   /**
    * Pick a Cell using a random option between:
-   * - one that chooses the newest Cell added
-   * - one that chooses a random Cell
+   * - the newest Cell
+   * - a random Cell
    *
    * There's 50% chances to take an option or the other.
    *

@@ -45,6 +45,11 @@ export default class MazeHuntAndKill extends Maze {
     }
   }
 
+  /**
+   * Scan the grid looking for an unvisited Cell with a visited neighbor.
+   *
+   * @param {Set} marked - The visited Cells.
+   */
   hunt(marked) {
     for (let r = 0; r < this.nrow; r++)
     for (let c = 0; c < this.ncol; c++) {
