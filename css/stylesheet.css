@@ -103,6 +103,9 @@ td {
 }
 
 select {
+   -moz-appearance:none; /* Firefox */
+   -webkit-appearance:none; /* Safari and Chrome */
+   appearance:none;
   background-color: #224a66;
   color: #d7aab0;
   font-family: Quicksand, arial, helvetica, sans-serif;
