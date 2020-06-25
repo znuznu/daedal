@@ -1,7 +1,8 @@
-import MazeBinaryTree from './MazeBinaryTree.js';
 import MazeBacktrack from './MazeBacktrack.js';
 import MazePrim from './MazePrim.js';
 import MazeHuntAndKill from './MazeHuntAndKill.js';
+import MazeBinaryTree from './MazeBinaryTree.js';
+import MazeGrowingTree from './MazeGrowingTree.js';
 import { show } from './Draw.js';
 
 /**
@@ -42,6 +43,10 @@ window.generate = function generate() {
     case 'btse':
       maze = new MazeBinaryTree(height, width);
       maze.process('south', 'east');
+      break;
+    case 'growingTree':
+      maze = new MazeGrowingTree(height, width);
+      maze.process();
       break;
   }
 
