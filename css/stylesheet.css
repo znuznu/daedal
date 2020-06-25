@@ -70,13 +70,13 @@ input[type=checkbox] {
 }
 
 input[type=checkbox] {
-    height: 16px;
-    width: 16px;
-    padding: 0;
-    background: #224a66;
-    border: 2px solid #d7aab0;
-    border-radius: 1px;
-    text-align: center;
+  height: 16px;
+  width: 16px;
+  padding: 0;
+  background: #224a66;
+  border: 2px solid #d7aab0;
+  border-radius: 1px;
+  text-align: center;
 }
 
 input[type="checkbox"]:checked {
@@ -84,17 +84,17 @@ input[type="checkbox"]:checked {
 }
 
 input[type=color] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
 }
 
 input[type=color] {
-    height: 25px;
-    width: 25px;
-    padding: 0px;
-    background: #224a66;
-    border: none;
+  height: 25px;
+  width: 25px;
+  padding: 0px;
+  background: #224a66;
+  border: none;
 }
 
 td {
@@ -103,9 +103,9 @@ td {
 }
 
 select {
-   -moz-appearance:none; /* Firefox */
-   -webkit-appearance:none; /* Safari and Chrome */
-   appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  appearance:none;
   background-color: #224a66;
   color: #d7aab0;
   font-family: Quicksand, arial, helvetica, sans-serif;
