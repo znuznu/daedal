@@ -54,6 +54,16 @@ export default class Maze {
   }
 
   /**
+   * Fill the grid in with passages.
+   */
+  fillWithPassages() {
+    for (let r = 0; r < this.nrow; r++) {
+      let row = this.fillRow(r, 0);
+      this.grid.push(row);
+    }
+  }
+
+  /**
    * Return a row filled with the given type.
    *
    * @param {number} rowIndex - Index of the row.

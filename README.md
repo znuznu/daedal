@@ -8,6 +8,7 @@ Generate perfect mazes (_tile-based_) with some rendering options.
 
 ### Algorithms:
 - Depth-first search
+- Recursive Division
 - Prim (randomized)
 - Hunt-and-kill
 - Binary Tree

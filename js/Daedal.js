@@ -1,4 +1,5 @@
 import MazeBacktrack from './MazeBacktrack.js';
+import MazeRecursiveDivision from './MazeRecursiveDivision.js';
 import MazePrim from './MazePrim.js';
 import MazeHuntAndKill from './MazeHuntAndKill.js';
 import MazeBinaryTree from './MazeBinaryTree.js';
@@ -19,6 +20,10 @@ window.generate = function generate() {
     case 'backtrack':
       maze = new MazeBacktrack(height, width);
       maze.process(0, 0);
+      break;
+    case 'recursiveDivision':
+      maze = new MazeRecursiveDivision(height, width);
+      maze.process();
       break;
     case 'prim':
       maze = new MazePrim(height, width);

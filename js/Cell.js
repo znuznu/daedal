@@ -60,4 +60,11 @@ export default class Cell {
   carve() {
     this.type = 0;
   }
+
+  /**
+   * This Cell becomes a wall.
+   */
+  buildWall() {
+    this.type = 1;
+  }
 }
