@@ -1,10 +1,12 @@
-import MazeBacktrack from './MazeBacktrack.js';
-import MazeRecursiveDivision from './MazeRecursiveDivision.js';
-import MazePrim from './MazePrim.js';
-import MazeHuntAndKill from './MazeHuntAndKill.js';
-import MazeBinaryTree from './MazeBinaryTree.js';
-import MazeGrowingTree from './MazeGrowingTree.js';
-import { show } from './Draw.js';
+import '../css/stylesheet.css';
+
+import { show } from './draw/Draw.js';
+import MazeBacktrack from './maze/MazeBacktrack.js';
+import MazeRecursiveDivision from './maze/MazeRecursiveDivision.js';
+import MazePrim from './maze/MazePrim.js';
+import MazeHuntAndKill from './maze/MazeHuntAndKill.js';
+import MazeBinaryTree from './maze/MazeBinaryTree.js';
+import MazeGrowingTree from './maze/MazeGrowingTree.js';
 
 /**
  * Generate the maze according to the user inputs.
