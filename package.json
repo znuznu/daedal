@@ -1,14 +1,13 @@
 {
   "name": "daedal-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Maze generation algorithms written in pure JavaScript",
   "scripts": {
     "start": "webpack-dev-server --config webpack/dev.js --open"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "znu",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.10.3",
