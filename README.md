@@ -1,5 +1,6 @@
 # daedal
 Maze generation algorithms written in pure JavaScript.  
+See the demo [here](https://znuznu.github.io/daedal/).  
 
 ![example](./assets/images/examples/example.png)  
 
