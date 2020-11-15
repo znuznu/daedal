@@ -24,3 +24,4 @@ The only thing required is [Node.js](https://nodejs.org/fr/).
 |-------------|---------------------------------------|  
 | `npm install` | Install project dependencies          |
 | `npm start`   | Build project and run (open) web server (available at http://localhost:8080) |  
+| `npm run build`   | Build project for production (see the generated 'dist' folder) | 
