@@ -45,10 +45,14 @@ body {
   align-self: center;
 }
 
-.button {
+.generate {
+  display: block;
+  margin: 1rem auto 0;
+}
+
+.generate__button {
   background-color: #000;
   color: #fff;
-  margin: 1rem auto 0;
   padding: 8px;
   font-family: 'Lato';
   font-size: 1em;

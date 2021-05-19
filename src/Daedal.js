@@ -78,19 +78,3 @@ window.generate = function generate() {
   maze.addBorder();
   show(maze);
 };
-
-/**
- * Write the maze generated to the clipboard.
- * A wall is represented as a 1 and a passage as a 0.
- */
-window.writeClipboard = function writeClipboard() {
-  let raw = document.getElementById('textRaw');
-  navigator.clipboard.writeText(raw.innerHTML).then(
-    function () {
-      alert('Saved!');
-    },
-    function () {
-      alert('Cannot save...');
-    }
-  );
-};
