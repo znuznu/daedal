@@ -51,7 +51,8 @@ function drawGrid(ctx, size, maze) {
   ctx.strokeStyle = 'lightgrey';
   ctx.beginPath();
 
-  let x = 0, y = 0;
+  let x = 0,
+    y = 0;
 
   for (let c = 0; c < maze.ncol; c++) {
     x += size;
@@ -80,14 +81,14 @@ function drawGrid(ctx, size, maze) {
  */
 function drawMaze(ctx, size, maze) {
   let color = document.getElementById('color').value;
-  let x = 0, y = 0;
+  let x = 0,
+    y = 0;
 
   ctx.fillStyle = color;
 
   for (let r of maze.grid) {
     for (let c of r) {
-      if (c.type == 1)
-        ctx.fillRect(x, y, size, size);
+      if (c.type == 1) ctx.fillRect(x, y, size, size);
       x += size;
     }
     x = 0;

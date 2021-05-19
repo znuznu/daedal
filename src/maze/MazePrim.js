@@ -1,5 +1,5 @@
 import Maze from './Maze.js';
-import { randNum } from '../maths/Maths.js';
+import { randNum } from '../rng/Rng.js';
 
 export default class MazePrim extends Maze {
   constructor(nrow, ncol) {
@@ -24,18 +24,16 @@ export default class MazePrim extends Maze {
     startCell.carve();
 
     let frontierNeighbors = this.validSurroundings(startCell, 2);
-    frontierNeighbors.forEach(n => {
+    frontierNeighbors.forEach((n) => {
       n.cell.isWall() && frontier.add(n.cell);
-    })
+    });
 
     while (frontier.size) {
       let frontierCells = Array.from(frontier);
       let cell = frontierCells[randNum(frontierCells.length)];
 
       let neighbors = this.validSurroundings(cell, 2);
-      let passageNeighbors = neighbors.filter(
-        n => !n.cell.isWall()
-      );
+      let passageNeighbors = neighbors.filter((n) => !n.cell.isWall());
 
       let rIndex = randNum(passageNeighbors.length);
       let pick = passageNeighbors[rIndex];
@@ -44,7 +42,7 @@ export default class MazePrim extends Maze {
       wall.carve();
       cell.carve();
 
-      neighbors.forEach(n => {
+      neighbors.forEach((n) => {
         n.cell.isWall() && frontier.add(n.cell);
       });
 

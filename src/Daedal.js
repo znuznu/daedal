@@ -1,4 +1,4 @@
-import '../css/stylesheet.css';
+import '../style/stylesheet.css';
 
 import { show } from './draw/Draw.js';
 import MazeBacktrack from './maze/MazeBacktrack.js';
@@ -16,9 +16,9 @@ window.generate = function generate() {
   let algorithm = selectAlgorithm.options[selectAlgorithm.selectedIndex].value;
   let width = document.getElementById('width').value;
   let height = document.getElementById('height').value;
-  let maze = undefined;
+  let maze = null;
 
-  switch(algorithm) {
+  switch (algorithm) {
     case 'backtrack':
       maze = new MazeBacktrack(height, width);
       maze.process(0, 0);
@@ -59,7 +59,7 @@ window.generate = function generate() {
 
   maze.addBorder();
   show(maze);
-}
+};
 
 /**
  * Write the maze generated to the clipboard.
@@ -67,9 +67,12 @@ window.generate = function generate() {
  */
 window.writeClipboard = function writeClipboard() {
   let raw = document.getElementById('textRaw');
-  navigator.clipboard.writeText(raw.innerHTML).then(function() {
-    alert('Saved!');
-  }, function() {
-    alert('Cannot save...');
-  });
-}
+  navigator.clipboard.writeText(raw.innerHTML).then(
+    function () {
+      alert('Saved!');
+    },
+    function () {
+      alert('Cannot save...');
+    }
+  );
+};

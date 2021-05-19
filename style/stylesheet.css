@@ -5,7 +5,8 @@ body {
   font-size: 1.1em;
 }
 
-h1, h2 {
+h1,
+h2 {
   color: #d7aab0;
   text-align: center;
   margin: 5px;
@@ -63,13 +64,13 @@ input {
   border-color: #d7aab0;
 }
 
-input[type=checkbox] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
 }
 
-input[type=checkbox] {
+input[type='checkbox'] {
   height: 16px;
   width: 16px;
   padding: 0;
@@ -79,17 +80,17 @@ input[type=checkbox] {
   text-align: center;
 }
 
-input[type="checkbox"]:checked {
+input[type='checkbox']:checked {
   background: #d7aab0;
 }
 
-input[type=color] {
+input[type='color'] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
 }
 
-input[type=color] {
+input[type='color'] {
   height: 25px;
   width: 25px;
   padding: 0px;
@@ -103,12 +104,12 @@ td {
 }
 
 select {
-  -moz-appearance:none;
-  -webkit-appearance:none;
-  appearance:none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   background-color: #224a66;
   color: #d7aab0;
-  font-family: Quicksand, arial, helvetica, sans-serif;
+  font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
   text-align: center;

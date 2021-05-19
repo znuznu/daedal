@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
-    entry: './src/js/Daedal.js',
+    entry: './src/Daedal.js',
     module: {
         rules: [
             {

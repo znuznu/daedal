@@ -31,8 +31,7 @@ export default class Maze {
         for (let c = 0; c < this.ncol; c++) {
           let cell = new Cell(r, c, 1, this);
 
-          if (c%2 === 0)
-            cell = new Cell(r, c, 0, this);
+          if (c % 2 === 0) cell = new Cell(r, c, 0, this);
 
           row.push(cell);
         }
@@ -91,7 +90,7 @@ export default class Maze {
     let validNeighbors = [];
     const directions = ['north', 'south', 'west', 'east'];
 
-    directions.forEach(direction => {
+    directions.forEach((direction) => {
       let cellInDirection = cell.getCellInDirection(direction, n);
       if (cellInDirection) {
         validNeighbors.push({

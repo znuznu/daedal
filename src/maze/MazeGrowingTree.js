@@ -1,5 +1,5 @@
 import Maze from './Maze.js';
-import { randNum } from '../maths/Maths.js';
+import { randNum } from '../rng/Rng.js';
 import BinaryHeap from '../struct/BinaryHeap.js';
 
 export default class MazeGrowingTree extends Maze {
@@ -14,7 +14,7 @@ export default class MazeGrowingTree extends Maze {
   process() {
     this.fillWithCross();
     let marked = new Set([]);
-    let c = new BinaryHeap(data => data.age);
+    let c = new BinaryHeap((data) => data.age);
     let randR = randNum(this.nrow / 2) * 2;
     let randC = randNum(this.ncol / 2) * 2;
 
@@ -29,12 +29,11 @@ export default class MazeGrowingTree extends Maze {
     c.push(startData);
 
     while (c.datas.length) {
-
       let pickedData = this.pick(c);
       let cell = pickedData.cell;
       let neighbors = this.validSurroundings(cell, 2);
 
-      neighbors = neighbors.filter(n => !marked.has(n.cell));
+      neighbors = neighbors.filter((n) => !marked.has(n.cell));
 
       if (neighbors.length) {
         let randNObject = neighbors[randNum(neighbors.length)];

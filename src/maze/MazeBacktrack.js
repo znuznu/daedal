@@ -1,5 +1,5 @@
 import Maze from './Maze.js';
-import { randNum } from '../maths/Maths.js';
+import { randNum } from '../rng/Rng.js';
 
 export default class MazeBacktrack extends Maze {
   constructor(nrow, ncol) {
@@ -16,7 +16,8 @@ export default class MazeBacktrack extends Maze {
   process(r, c) {
     this.fillWithCross();
 
-    let stack = [], marked = new Set([]);
+    let stack = [],
+      marked = new Set([]);
     marked.add(this.grid[r][c]);
     stack.push(this.grid[r][c]);
 
@@ -25,9 +26,7 @@ export default class MazeBacktrack extends Maze {
 
       let neighbors = this.validSurroundings(current, 2);
 
-      let notMarked = neighbors.filter(
-        n => !marked.has(n.cell)
-      );
+      let notMarked = neighbors.filter((n) => !marked.has(n.cell));
 
       if (notMarked.length) {
         stack.push(current);
