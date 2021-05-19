@@ -1,5 +1,5 @@
 import Maze from './Maze.js';
-import { randNum } from '../maths/Maths.js';
+import { randNum } from '../rng/Rng.js';
 
 export default class MazeHuntAndKill extends Maze {
   constructor(nrow, ncol) {
@@ -27,9 +27,7 @@ export default class MazeHuntAndKill extends Maze {
       marked.add(cell);
       let neighbors = this.validSurroundings(cell, 2);
 
-      let notMarked = neighbors.filter(
-        n => !marked.has(n.cell)
-      );
+      let notMarked = neighbors.filter((n) => !marked.has(n.cell));
 
       if (notMarked.length) {
         let pick = notMarked[randNum(notMarked.length)];
@@ -52,23 +50,21 @@ export default class MazeHuntAndKill extends Maze {
    */
   hunt(marked) {
     for (let r = 0; r < this.nrow; r++)
-    for (let c = 0; c < this.ncol; c++) {
-      let cell = this.grid[r][c];
+      for (let c = 0; c < this.ncol; c++) {
+        let cell = this.grid[r][c];
 
-      if (cell.isWall() || marked.has(cell))
-        continue;
+        if (cell.isWall() || marked.has(cell)) continue;
 
-      let neighbors = this.validSurroundings(cell, 2);
+        let neighbors = this.validSurroundings(cell, 2);
 
-      for (let n of neighbors) {
-        if (!marked.has(n.cell))
-          continue;
+        for (let n of neighbors) {
+          if (!marked.has(n.cell)) continue;
 
-        let wall = cell.getCellInDirection(n.direction, 1);
-        wall.carve();
+          let wall = cell.getCellInDirection(n.direction, 1);
+          wall.carve();
 
-        return cell;
+          return cell;
+        }
       }
-    }
   }
 }

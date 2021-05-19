@@ -1,5 +1,5 @@
 import Maze from './Maze.js';
-import { randNum } from '../maths/Maths.js';
+import { randNum } from '../rng/Rng.js';
 
 export default class MazeRecursiveDivision extends Maze {
   constructor(nrow, ncol) {
@@ -25,8 +25,7 @@ export default class MazeRecursiveDivision extends Maze {
    * @param {number} cols - The width (tiles) of the area to use.
    */
   divide(r, c, rows, cols) {
-    if (rows < 2 || cols < 2)
-      return;
+    if (rows < 2 || cols < 2) return;
 
     const orientations = [
       {
@@ -45,33 +44,24 @@ export default class MazeRecursiveDivision extends Maze {
 
     if (cols > rows) {
       orientation = orientations[0];
-
     } else if (rows > cols) {
       orientation = orientations[1];
     }
 
     if (orientation.type === 'HORIZONTAL') {
       for (let col = c; col < c + cols; col++) {
-        if (col !== orientation.wall)
-          this.grid[orientation.index][col].buildWall();
+        if (col !== orientation.wall) this.grid[orientation.index][col].buildWall();
       }
 
       this.divide(r, c, orientation.index - r, cols);
-      this.divide(
-        orientation.index + 1, c,
-        rows - 1 - orientation.index + r, cols
-      );
+      this.divide(orientation.index + 1, c, rows - 1 - orientation.index + r, cols);
     } else {
       for (let row = r; row < r + rows; row++) {
-        if (row !== orientation.wall)
-          this.grid[row][orientation.index].buildWall();
+        if (row !== orientation.wall) this.grid[row][orientation.index].buildWall();
       }
 
       this.divide(r, c, rows, orientation.index - c);
-      this.divide(
-        r, orientation.index + 1,
-        rows, cols - 1 - orientation.index + c
-      );
+      this.divide(r, orientation.index + 1, rows, cols - 1 - orientation.index + c);
     }
   }
 }

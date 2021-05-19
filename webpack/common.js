@@ -3,7 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 let config = {
-    entry: './src/js/Daedal.js',
+    entry: './src/Daedal.js',
     module: {
         rules: [
             {
@@ -16,6 +16,18 @@ let config = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'style/fonts/'
+                        }
+                    }
+                ]
             }
         ]
     },

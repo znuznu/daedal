@@ -23,20 +23,22 @@ export default class Cell {
    * @returns {Cell} - The Cell if it exists, otherwise undefined.
    */
   getCellInDirection(direction, n) {
-    let cell = undefined, c = -1, r = -1;
+    let cell = undefined,
+      c = -1,
+      r = -1;
 
     switch (direction) {
       case 'north':
-        r = this.r - n, c = this.c;
+        (r = this.r - n), (c = this.c);
         break;
       case 'south':
-        r = this.r + n, c = this.c;
+        (r = this.r + n), (c = this.c);
         break;
       case 'west':
-        r = this.r, c = this.c - n;
+        (r = this.r), (c = this.c - n);
         break;
       case 'east':
-        r = this.r, c = this.c + n;
+        (r = this.r), (c = this.c + n);
         break;
     }
 
