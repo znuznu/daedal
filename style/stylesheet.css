@@ -1,177 +1,91 @@
 body {
   margin: 0;
-  font-family: Quicksand, arial, helvetica, sans-serif;
-  background-color: #d7aab0;
-  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h1,
-h2 {
-  color: #d7aab0;
-  text-align: center;
-  margin: 5px;
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('../style/fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('../style/fonts/poppins-v15-latin-regular.woff') format('woff');
 }
 
-ul {
-  right: 0;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: right;
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''), url('../style//fonts/lato-v17-latin-regular.woff2') format('woff2'),
+    url('../style/fonts/lato-v17-latin-regular.woff') format('woff');
 }
 
-button {
-  background-color: #d7aab0;
-  color: #224a66;
-  font-family: Quicksand, arial, helvetica, sans-serif;
+.options {
+  font-family: 'Lato';
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  margin: 2rem auto 0;
+}
+
+.options__grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.options__grid label {
+  align-self: center;
+}
+
+.button {
+  background-color: #000;
+  color: #fff;
+  margin: 1rem auto 0;
+  padding: 8px;
+  font-family: 'Lato';
   font-size: 1em;
   font-weight: bold;
-  padding: 5px 10px;
-  text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border: solid 2px;
-  border-radius: 16px;
-  border-color: #d7aab0;
-}
-
-button:hover {
-  background-color: #224a66;
-  color: #d7aab0;
-}
-
-li {
-  padding: 5px 5px 5px 5px;
-}
-
-label {
-  font-weight: bold;
-  display: inline-block;
-  padding-right: 5px;
-}
-
-input {
-  background-color: #224a66;
-  color: #d7aab0;
-  font-family: Quicksand, arial, helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  padding: 5px 10px;
-  border: solid 2px;
-  border-radius: 16px;
-  border-color: #d7aab0;
-}
-
-input[type='checkbox'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-}
-
-input[type='checkbox'] {
-  height: 16px;
-  width: 16px;
-  padding: 0;
-  background: #224a66;
-  border: 2px solid #d7aab0;
-  border-radius: 1px;
-  text-align: center;
-}
-
-input[type='checkbox']:checked {
-  background: #d7aab0;
-}
-
-input[type='color'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-}
-
-input[type='color'] {
-  height: 25px;
-  width: 25px;
-  padding: 0px;
-  background: #224a66;
   border: none;
+  border-radius: 0px;
 }
 
-td {
-  width: 100%;
-  height: 50px;
-}
-
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: #224a66;
-  color: #d7aab0;
-  font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+.title {
+  font-family: 'Lato';
+  font-size: 24px;
   text-align: center;
-  text-decoration: none;
-  border: solid 2px;
-  border-radius: 16px;
-  border-color: #d7aab0;
-  box-sizing: border-box;
-  padding: 5px;
+  margin: 1rem 0 0;
 }
 
-div#container {
+.title__brand {
   display: flex;
-  align-items: stretch;
-  min-height: 100vh;
+  justify-content: center;
+  margin: 0;
 }
 
-div#contentSection {
-  min-height: 100%;
-  border: solid transparent 1px;
-  background-color: #224a66;
+.title__main {
+  margin: 0;
 }
 
-div#mazeSection {
-  flex-grow: 1;
-  margin-left: 20px;
+.title__brand__icon {
+  margin: auto 0;
 }
 
-div#canvasSection {
-  margin-top: 20px;
-  border: solid transparent 1px;
-  border-radius: 5px;
+.title__sub {
+  margin: 0;
 }
 
-div#rawSection {
-  text-align: center;
-}
-
-div#generate {
-  color: #3b3b3b;
-  text-align: center;
-  margin-top: 25px;
-}
-
-div#titleSection {
-  margin-top: 20px;
-  margin-bottom: 50px;
+.view {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-table#settings {
-  color: #d7aab0;
-  margin: 10px;
-}
-
-canvas#canvasMaze {
-  background-color: white;
-}
-
-img#icon {
-  float: left;
-  margin: 0px;
+  justify-content: center;
+  margin: 1rem 0;
 }

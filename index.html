@@ -1,74 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Maze generator - tile based</title>
-  </head>
-  <body>
-    <div id="container">
-      <div id="contentSection">
-        <div id="titleSection">
-          <img id="icon" src="/assets/logo/logo.png" alt="Logo">
-          <h1>Maze generator</h1>
-          <h2>Tile based</h2>
-        </div>
-        <table id="settings">
-          <tbody>
-            <tr>
-              <td><label>Height</label></td>
-              <td><input id="height" value="5" type="text"/></td>
-            </tr>
-            <tr>
-              <td><label>Width</label></td>
-              <td><input id="width" value="10" type="text"/></td>
-            </tr>
-            <tr>
-              <td><label for="algorithms">Algorithm</label></td>
-              <td>
-                <select name="algorithms" id="algorithms">
-                    <option value="backtrack">Depth-first search</option>
-                    <option value="recursiveDivision">Recursive Division</option>
-                    <option value="prim">Prim</option>
-                    <option value="huntandkill">Hunt And Kill</option>
-                    <option value="btnw">Binary Tree (N/W)</option>
-                    <option value="btne">Binary Tree (N/E)</option>
-                    <option value="btsw">Binary Tree (S/W)</option>
-                    <option value="btse">Binary Tree (S/E)</option>
-                    <option value="growingTree">Growing Tree</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td><label>Color</label></td>
-              <td>
-                <input type="color" id="color" value="#224a66">
-              </td>
-            </tr>
-            <tr>
-              <td><label for="grid">Grid</label></td>
-              <td>
-                <input type="checkbox" id="grid">
-              </td>
-            </tr>
-            <tr>
-              <td><label>Tile size</label></td>
-              <td><input id="size" value="20" type="text"/></td>
-            </tr>
-          </tbody>
-      </table>
-      <div id="generate">
-        <button onclick="generate()"/>Generate</button>
-      </div>
-      <div id="rawSection" hidden>
-        <textarea id="textRaw" readonly hidden></textarea></br>
-        <button onclick="writeClipboard()">Raw version to clipboard</button></br>
-      </div>
+
+<head>
+  <meta charset="utf-8">
+  <title>Maze generator - tile based</title>
+</head>
+
+<body>
+  <div class="title">
+    <canvas class="title__icon" id="icon" src="/assets/logo/logo.png" alt="Logo"></canvas>
+    <div class="title__brand">
+      <h1 class="title__main">Maze generator</h1>
     </div>
-    <div id="mazeSection" hidden>
-      <div id="canvasSection">
-        <canvas id="canvasMaze"></canvas>
-      </div>
+    <h2 class="title__sub">Tile based</h2>
+  </div>
+
+  <div class="options">
+    <div class="options__grid">
+      <label for="algorithms">Algorithms</label>
+      <select id="algorithms" name="algorithms">
+        <option value="backtrack">Depth-first search</option>
+        <option value="recursiveDivision">Recursive Division</option>
+        <option value="prim">Prim</option>
+        <option value="huntandkill">Hunt And Kill</option>
+        <option value="btnw">Binary Tree (N/W)</option>
+        <option value="btne">Binary Tree (N/E)</option>
+        <option value="btsw">Binary Tree (S/W)</option>
+        <option value="btse">Binary Tree (S/E)</option>
+        <option value="growingTree">Growing Tree</option>
+      </select>
+
+      <label for="color">Color</label>
+      <input type="color" id="color" value="#000000">
+
+      <label for="set-grid">Grid</label>
+      <input type="checkbox" id="set-grid">
+
+      <label>Maze width (tile)</label>
+      <input id="width" value="24" type="number" />
+
+      <label>Maze height (tile)</label>
+      <input id="height" value="24" type="number" />
     </div>
   </div>
-  </body>
+
+  <button class="button" onclick=" generate()" />Generate</button>
+
+
+  <div id="view" class="view" hidden>
+    <canvas class="view__canvas" id="canvas"></canvas>
+  </div>
+</body>
+
 </html>
