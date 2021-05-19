@@ -1,6 +1,6 @@
 # daedal
 
-Maze generation algorithms written in pure JavaScript.  
+Maze generation algorithms written in pure client-side JavaScript.  
 See the demo [here](https://znuznu.github.io/daedal/).
 
 Generate perfect mazes (_tile-based_) with some rendering options.  
