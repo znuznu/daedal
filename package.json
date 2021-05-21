@@ -32,5 +32,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,css}": "prettier --write --config .prettierrc"
+  },
+  "dependencies": {
+    "three": "^0.128.0"
   }
 }

@@ -1,4 +1,4 @@
-import Cell from './Cell.js';
+import Cell from './cell.js';
 
 export default class Maze {
   /**

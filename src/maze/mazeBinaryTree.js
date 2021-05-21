@@ -1,5 +1,5 @@
-import Maze from './Maze.js';
-import { randNum } from '../rng/Rng.js';
+import Maze from './maze.js';
+import { randNum } from '../rng/rng.js';
 
 export default class MazeBinaryTree extends Maze {
   constructor(nrow, ncol) {
