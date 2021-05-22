@@ -28,7 +28,9 @@ window.onload = function generateIcon() {
 
   drawMaze(ctx, size, maze);
 
-  window.view = new View3D(1000, 500);
+  const [width, height] = getOptimizedSizeForCanvas();
+
+  window.view = new View3D(width, height);
 };
 
 /**
@@ -90,3 +92,13 @@ window.generate = function generate() {
 
   window.view.renderMaze({ maze, color: document.getElementById('color').value });
 };
+
+function getOptimizedSizeForCanvas() {
+  if (window.innerWidth > 720) {
+    return [700, 500];
+  } else if (window.innerWidth > 580) {
+    return [600, 400];
+  } else {
+    return [300, 200];
+  }
+}

@@ -8,7 +8,7 @@ class View3D {
 
     //Camera
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.set(15, 8, 0);
+    this.camera.position.set(20, 8, 0);
 
     // Lights
     this.mainLight = new THREE.DirectionalLight(0xffffff);
