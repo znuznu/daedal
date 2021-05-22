@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --config webpack/dev.js --open",
     "build": "webpack --config webpack/prod.js",
     "prepare": "husky install",
-    "fmt": "prettier --write --config .prettierrc src/**/*.{js,css}",
+    "fmt": "prettier --write --config .prettierrc src/**/*.js",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "keywords": [],
@@ -32,5 +32,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,css}": "prettier --write --config .prettierrc"
+  },
+  "dependencies": {
+    "three": "^0.128.0"
   }
 }

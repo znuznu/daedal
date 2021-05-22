@@ -1,12 +1,15 @@
 import '../style/stylesheet.css';
 
-import { show, drawMaze } from './draw/Draw.js';
-import MazeBacktrack from './maze/MazeBacktrack.js';
-import MazeRecursiveDivision from './maze/MazeRecursiveDivision.js';
-import MazePrim from './maze/MazePrim.js';
-import MazeHuntAndKill from './maze/MazeHuntAndKill.js';
-import MazeBinaryTree from './maze/MazeBinaryTree.js';
-import MazeGrowingTree from './maze/MazeGrowingTree.js';
+import MazeBacktrack from './maze/mazeBacktrack.js';
+import MazeRecursiveDivision from './maze/mazeRecursiveDivision.js';
+import MazePrim from './maze/mazePrim.js';
+import MazeHuntAndKill from './maze/mazeHuntAndKill.js';
+import MazeBinaryTree from './maze/mazeBinaryTree.js';
+import MazeGrowingTree from './maze/mazeGrowingTree.js';
+import { drawMaze } from './view/2d/view.js';
+import View3D from './view/3d/view.js';
+
+window.isLoaded = false;
 
 /**
  * Generate a pretty random maze as icon.
@@ -24,6 +27,10 @@ window.onload = function generateIcon() {
   ctx.canvas.width = maze.ncol * size;
 
   drawMaze(ctx, size, maze);
+
+  const [width, height] = getOptimizedSizeForCanvas();
+
+  window.view = new View3D(width, height);
 };
 
 /**
@@ -76,5 +83,22 @@ window.generate = function generate() {
   }
 
   maze.addBorder();
-  show(maze);
+
+  if (!window.isLoaded) {
+    document.getElementById(`view`).appendChild(window.view.renderer.domElement);
+    window.view.init();
+    window.isLoaded = true;
+  }
+
+  window.view.renderMaze({ maze, color: document.getElementById('color').value });
 };
+
+function getOptimizedSizeForCanvas() {
+  if (window.innerWidth > 720) {
+    return [700, 500];
+  } else if (window.innerWidth > 580) {
+    return [600, 400];
+  } else {
+    return [300, 200];
+  }
+}

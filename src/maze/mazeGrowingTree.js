@@ -1,6 +1,6 @@
-import Maze from './Maze.js';
-import { randNum } from '../rng/Rng.js';
-import BinaryHeap from '../struct/BinaryHeap.js';
+import Maze from './maze.js';
+import { randNum } from '../rng/rng.js';
+import BinaryHeap from '../struct/binaryHeap.js';
 
 export default class MazeGrowingTree extends Maze {
   constructor(nrow, ncol) {

@@ -5,7 +5,6 @@
  */
 export function show(maze) {
   let canvas = document.getElementById('canvas');
-  let grid = document.getElementById('set-grid').checked;
   const size = 10;
   view.hidden = false;
 
@@ -18,6 +17,7 @@ export function show(maze) {
 }
 
 /**
+ * NOTE: deadcode
  * Draw an helpful grid on the canvas.
  *
  * @param {CanvasRenderingContext2D} ctx - The canvas context.
@@ -57,11 +57,10 @@ function drawGrid(ctx, size, maze) {
  * @param {Maze} maze - The maze.
  */
 export function drawMaze(ctx, size, maze) {
-  let color = document.getElementById('color').value;
   let x = 0,
     y = 0;
 
-  ctx.fillStyle = color;
+  ctx.fillStyle = 'black';
 
   for (let r of maze.grid) {
     for (let c of r) {

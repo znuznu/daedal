@@ -3,7 +3,7 @@
 Maze generation algorithms written in pure client-side JavaScript.  
 See the demo [here](https://znuznu.github.io/daedal/).
 
-Generate perfect mazes (_tile-based_) with some rendering options.  
+Generate perfect mazes (_tile-based_) with 3D rendering.
 "Perfect" means there is exactly one path to any other point from each point.
 
 The project is based on [Node.js](https://nodejs.org/fr/) and [Webpack 4](https://webpack.js.org/).
