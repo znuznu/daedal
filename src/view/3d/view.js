@@ -6,10 +6,11 @@ class View3D {
     this.width = width;
     this.height = height;
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.set(0, 30, 0);
+    this.camera.position.set(0, 20, 0);
     this.scene = new THREE.Scene();
     this.renderer = new THREE.WebGLRenderer({ alpha: true });
     this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(width, height);
   }
 
   init({ id }) {
@@ -31,7 +32,7 @@ class View3D {
     this.renderer.render(this.scene, this.camera);
   }
 
-  loadMaze({ maze }) {
+  renderMaze({ maze }) {
     this.scene.clear();
 
     const rowOffset = maze.grid.length / 2;
@@ -46,7 +47,7 @@ class View3D {
         const geometry = new THREE.BoxGeometry(0.5, 1, 0.5);
         geometry.translate(0.5 * j - colOffset * 0.5, 0.5, 0.5 * i - rowOffset * 0.5);
         const material = new THREE.MeshBasicMaterial({
-          color: `#${Math.floor(100000 + Math.random() * 800000)}`
+          color: `${document.getElementById('color').value}`
         });
         const cube = new THREE.Mesh(geometry, material);
 

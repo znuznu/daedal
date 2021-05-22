@@ -5,7 +5,6 @@
  */
 export function show(maze) {
   let canvas = document.getElementById('canvas');
-  let grid = document.getElementById('set-grid').checked;
   const size = 10;
   view.hidden = false;
 
@@ -18,6 +17,7 @@ export function show(maze) {
 }
 
 /**
+ * NOTE: deadcode
  * Draw an helpful grid on the canvas.
  *
  * @param {CanvasRenderingContext2D} ctx - The canvas context.

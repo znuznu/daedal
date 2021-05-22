@@ -28,7 +28,7 @@ window.onload = function generateIcon() {
 
   drawMaze(ctx, size, maze);
 
-  window.view = new View3D(750, 500);
+  window.view = new View3D(1000, 500);
 };
 
 /**
@@ -87,5 +87,5 @@ window.generate = function generate() {
     window.isLoaded = true;
   }
 
-  window.view.loadMaze({ maze });
+  window.view.renderMaze({ maze });
 };
