@@ -57,7 +57,7 @@ function drawGrid(ctx, size, maze) {
  * @param {Maze} maze - The maze.
  */
 export function drawMaze(ctx, size, maze) {
-  let color = document.getElementById('color').value;
+  let color = 'black';
   let x = 0,
     y = 0;
 

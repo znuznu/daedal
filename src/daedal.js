@@ -83,9 +83,10 @@ window.generate = function generate() {
   maze.addBorder();
 
   if (!window.isLoaded) {
-    window.view.init({ id: 'view' });
+    document.getElementById(`view`).appendChild(window.view.renderer.domElement);
+    window.view.init();
     window.isLoaded = true;
   }
 
-  window.view.renderMaze({ maze });
+  window.view.renderMaze({ maze, color: document.getElementById('color').value });
 };
