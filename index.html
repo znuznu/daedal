@@ -9,10 +9,10 @@
 <body>
   <div class="title">
     <canvas class="title__icon" id="icon" src="/assets/logo/logo.png" alt="Logo"></canvas>
-    <div class="title__brand">
-      <h1 class="title__main">Maze generator</h1>
+    <div class="title__main">
+      <h1 class="title__main">Daedal</h1>
     </div>
-    <h2 class="title__sub">Tile based</h2>
+    <h3 class="title__sub">Tile based maze generator</h3>
   </div>
 
   <div class="options">
@@ -30,11 +30,13 @@
         <option value="growingTree">Growing Tree</option>
       </select>
 
-      <label for="color">Color</label>
-      <input type="color" id="color" value="#ffffff">
 
       <label>Maze width (tile)</label>
       <input id="width" value="20" max="20" min="1" type="number" />
+
+
+      <label for="color">Color</label>
+      <input type="color" id="color" value="#ffffff">
 
       <label>Maze height (tile)</label>
       <input id="height" value="20" max="20" min="1" type="number" />

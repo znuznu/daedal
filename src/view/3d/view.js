@@ -8,7 +8,7 @@ class View3D {
 
     //Camera
     this.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    this.camera.position.set(0, 20, 0);
+    this.camera.position.set(15, 8, 0);
 
     // Lights
     this.mainLight = new THREE.DirectionalLight(0xffffff);
@@ -47,12 +47,10 @@ class View3D {
 
     this.scene.add(this.mainLight);
 
-    const axesHelper = new THREE.AxesHelper(5);
-    this.scene.add(axesHelper);
-
     const rowOffset = maze.grid.length / 2;
     const colOffset = maze.grid[0].length / 2;
 
+    // Non-efficient way to deal with the Meshes
     for (let i = 0; i < maze.grid.length; i++) {
       for (let j = 0; j < maze.grid[i].length; j++) {
         if (!maze.grid[i][j].type) {
@@ -66,7 +64,8 @@ class View3D {
           0.5 * i - rowOffset * 0.5 + 0.25
         );
         const material = new THREE.MeshPhongMaterial({
-          color: `${color}`
+          color: `${color}`,
+          emissive: 0x080808
         });
         const cube = new THREE.Mesh(geometry, material);
 
